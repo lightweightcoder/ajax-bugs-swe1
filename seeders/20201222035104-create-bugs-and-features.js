@@ -1,4 +1,5 @@
 module.exports = {
+  // eslint-disable-next-line no-unused-vars
   up: async (queryInterface, Sequelize) => {
     const featuresList = [
       {
@@ -25,6 +26,7 @@ module.exports = {
     queryInterface.bulkInsert('Features', featuresList);
   },
 
+  // eslint-disable-next-line no-unused-vars
   down: async (queryInterface, Sequelize) => {
     queryInterface.bulkDelete('Features', null, {});
   },

@@ -1,8 +1,5 @@
 export default function bugs(db) {
   const index = async (req, res) => {
-    // db.Bug.findAll({
-
-    // })
     res.render('home');
   };
   const create = async (req, res) => {
