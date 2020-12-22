@@ -10,14 +10,18 @@ app.use(cookieParser());
 
 app.set('view engine', 'ejs');
 
+// This is from HTML forms
 app.use(express.urlencoded({ extended: false }));
+
+// This takes from what axios sends and puts into req.body
+app.use(express.json());
 
 app.use(express.static('public'));
 
 app.use(methodOverride('_method'));
 
 // set the routes
-routes( app );
+routes(app);
 
 const PORT = process.env.PORT || 3004;
 
