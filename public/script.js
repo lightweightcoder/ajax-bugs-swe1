@@ -51,18 +51,23 @@ createBugBtn.addEventListener('click', async () => {
       FeatureId: selectedFeatureId,
     };
 
-    // Make a request to create a bug
+    // form validation for empty fields
+    if (data.problem === '' || data.commit === '' || data.errorText === '' || data.FeatureId === '') {
+      console.log('empty field(s) detected');
+    } else {
+      // Make a request to create a bug
     // eslint-disable-next-line no-undef
-    axios.post('/createBug', data)
-      .then((response) => {
+      axios.post('/createBug', data)
+        .then((response) => {
         // handle success
-        console.log(response);
-        document.body.removeChild(createBugDiv);
-      })
-      .catch((error) => {
+          console.log(response);
+          document.body.removeChild(createBugDiv);
+        })
+        .catch((error) => {
         // handle error
-        console.log(error);
-      });
+          console.log(error);
+        });
+    }
   });
 
   // logic to create elements to display features buttons

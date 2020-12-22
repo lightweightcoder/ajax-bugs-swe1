@@ -1,6 +1,12 @@
 export default function bugs(db) {
   const index = async (req, res) => {
-    res.render('home');
+    try {
+      const bugsList = await db.Bug.findAll();
+
+      res.render('home', { bugsList });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const create = async (req, res) => {

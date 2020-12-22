@@ -7,5 +7,12 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src='script.js'></script>
 
+    <div>
+      <p>problem : errorText : commit</p>
+      <% bugsList.forEach((bug) => { %>
+        <p><%= bug.problem %> : <%= bug.errorText %> : <%= bug.commit %></p>
+      <% }); %> 
+    </div>
+
   </body>
 </html>
